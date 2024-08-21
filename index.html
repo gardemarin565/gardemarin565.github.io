@@ -4,8 +4,9 @@
         <meta charset="UTF-8">
         <title>Ok</title>
         <link rel="stylesheet" href="main.css">
+        <script type="text/javascript" src="eel.js"></script>
     </head>
-    <body>
+    <body onload="brython();">
         <div id="game">
             <h1 id="h1">0</h1>
             <img src="assets/Eschkere.png" alt="pocxalko" id="image" style="transform: scale(70%) translateY(-15%);">
@@ -17,9 +18,31 @@
         </div>
         <div id="selectbar">
             <a class="select" id="tap">🧇 тапать</p>
-            <a href="shop.html" class="select">🛒 магазин</a>
-            <a href="" class="select">💵 донат</a>
+            <a href="shop.html" class="select" id="shopin">🛒 магазин</a>
+            <a href="" class="select" id="donate">💵 донат</a>
         </div>
+                <script type="text/javascript">
+                    const h1Id = document.getElementById('h1')
+                    let parametrs = new URLSearchParams(document.location.search)
+                    let value = parametrs.get('id')
+                    let updatetap = 1
+                    let energy = 500
+
+                    callPython()
+                    async function callPython(){
+                        await eel.progress(value)
+                    }
+
+                    eel.expose(loadProgress)
+                    function loadProgress(counter){
+                        h1Id.textContent = counter
+                    }
+
+                    function plusjonkler(){
+                        eel.plus(value, parseInt(h1Id.textContent), )
+                    }
+                    
+                </script>
     </body>
     <script src="script.js"></script>
 </html>
