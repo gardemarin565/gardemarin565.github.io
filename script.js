@@ -1,3 +1,4 @@
+const sqlite3 = require('sqlite3').verbose()
 var h1Id=document.getElementById('h1')
 var buttonId=document.getElementById('image')
 var counter=0
@@ -14,6 +15,17 @@ var h1IdShop = document.getElementById('clicker')
 let params = new URLSearchParams(document.location.search)
 let value = params.get('id')
 
+const meme = new sqlite3.Database('database.db')
+
+meme.run('CREATE TABLE users (id INT, coins INT, energy INT, tap INT, energylimit INT, autotap INT')
+
+const LoadProgress = function(){
+    coin = meme.get('SELECT coins FROM users WHERE id = ?', [value])
+    h1Id.textContent = coin
+}
+
+LoadProgress()
+
 const energycharge=() => {
     if (progress<EnergyLimitUpgrade) {
         progress=progress+1
@@ -29,11 +41,11 @@ do {
 
 buttonId.addEventListener('click', function(){
     if(progress!=0) {
-        counter=counter+upgrade
-        h1Id.textContent = value
-        progress=progress-1
-        energu.textContent=`${progress}/${EnergyLimitUpgrade}`
-        progressBar.setAttribute('value', progress)
+            counter=counter+upgrade
+            h1Id.textContent = value
+            progress=progress-1
+            energu.textContent=`${progress}/${EnergyLimitUpgrade}`
+            progressBar.setAttribute('value', progress)
     }
     else {}
 })
