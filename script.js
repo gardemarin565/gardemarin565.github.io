@@ -17,11 +17,12 @@ let value = params.get('id')
 
 const meme = new sqlite3.Database('database.db')
 
-meme.run('CREATE TABLE users (id INT, coins INT, energy INT, tap INT, energylimit INT, autotap INT')
+meme.run('CREATE TABLE IF NOT EXISTS users (id INT, coins INT, energy INT, tap INT, energylimit INT, autotap INT')
 
 const LoadProgress = function(){
     coin = meme.get('SELECT coins FROM users WHERE id = ?', [value])
     h1Id.textContent = coin
+    counter = coin
 }
 
 LoadProgress()
@@ -41,11 +42,11 @@ do {
 
 buttonId.addEventListener('click', function(){
     if(progress!=0) {
-            counter=counter+upgrade
-            h1Id.textContent = value
-            progress=progress-1
-            energu.textContent=`${progress}/${EnergyLimitUpgrade}`
-            progressBar.setAttribute('value', progress)
+        counter=counter+upgrade
+        h1Id.textContent = counter+upgrade
+        progress=progress-1
+        energu.textContent=`${progress}/${EnergyLimitUpgrade}`
+        progressBar.setAttribute('value', progress)
     }
     else {}
 })
