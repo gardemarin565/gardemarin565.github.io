@@ -15,8 +15,6 @@ var h1IdShop = document.getElementById('clicker')
 let params = new URLSearchParams(document.location.search)
 let value = params.get('id')
 
-h1Id.textContent = value
-
 const meme = new sqlite3.Database('database.db')
 
 meme.run('CREATE TABLE users (id INT, coins INT, energy INT, tap INT, energylimit INT, autotap INT')
@@ -42,12 +40,12 @@ buttonId.addEventListener('click', function(){
     if(progress!=0) {
         async function PlusPosxalko() {
             await eel.Pocxalko(counter+upgrade)
+            counter=counter+upgrade
+            h1Id.textContent = value
+            progress=progress-1
+            energu.textContent=`${progress}/${EnergyLimitUpgrade}`
+            progressBar.setAttribute('value', progress)
         }
-        counter=counter+upgrade
-        h1Id.textContent=counter
-        progress=progress-1
-        energu.textContent=`${progress}/${EnergyLimitUpgrade}`
-        progressBar.setAttribute('value', progress)
     }
     else {}
 })
