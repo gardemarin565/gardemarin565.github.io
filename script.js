@@ -17,7 +17,7 @@ let value = params.get('id')
 
 const meme = new sqlite3.Database('database.db')
 
-meme.run('CREATE TABLE IF NOT EXISTS users (id INT, coins INT, energy INT, tap INT, energylimit INT, autotap INT')
+meme.run('CREATE TABLE users (id INT, coins INT, energy INT, tap INT, energylimit INT, autotap INT')
 
 const LoadProgress = function(){
     coin = meme.get('SELECT coins FROM users WHERE id = ?', [value])
