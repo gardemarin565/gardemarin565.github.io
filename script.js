@@ -29,12 +29,11 @@ buttonId.addEventListener('click', function(){
     if(progress!=0) {
         async function PlusPosxalko() {
             await eel.Pocxalko(counter+upgrade)
-        }
-        counter=counter+upgrade
-        h1Id.textContent=counter
-        progress=progress-1
-        energu.textContent=`${progress}/${EnergyLimitUpgrade}`
-        progressBar.setAttribute('value', progress)
+            counter=counter+upgrade
+            h1Id.textContent=counter
+            progress=progress-1
+            energu.textContent=`${progress}/${EnergyLimitUpgrade}`
+            progressBar.setAttribute('value', progress)
     }
     else {}
 })
