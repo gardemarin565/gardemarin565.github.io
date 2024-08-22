@@ -38,11 +38,11 @@ do {
 
 buttonId.addEventListener('click', function(){
     if(progress!=0) {
-            counter=counter+upgrade
-            h1Id.textContent = value
-            progress=progress-1
-            energu.textContent=`${progress}/${EnergyLimitUpgrade}`
-            progressBar.setAttribute('value', progress)
+        counter=counter+upgrade
+        h1Id.textContent = value
+        progress=progress-1
+        energu.textContent=`${progress}/${EnergyLimitUpgrade}`
+        progressBar.setAttribute('value', progress)
     }
     else {}
 })
