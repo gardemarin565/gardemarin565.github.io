@@ -1,4 +1,3 @@
-const sqlite3 = require('sqlite3').verbose()
 var h1Id=document.getElementById('h1')
 var buttonId=document.getElementById('image')
 var counter=0
@@ -14,14 +13,6 @@ var shop = document.getElementById('shopin')
 var h1IdShop = document.getElementById('clicker')
 let params = new URLSearchParams(document.location.search)
 let value = params.get('id')
-
-const meme = new sqlite3.Database('database.db')
-
-meme.run('CREATE TABLE users (id INT, coins INT, energy INT, tap INT, energylimit INT, autotap INT')
-
-const LoadProgress = function(){
-    meme.run('SELECT coins FROM users WHERE id = ?', [])
-}
 
 const energycharge=() => {
     if (progress<EnergyLimitUpgrade) {
