@@ -5,21 +5,29 @@
         <title>Ok</title>
         <link rel="stylesheet" href="main.css">
     </head>
-    <body>
-        <div id="game">
-            <h1 id="h1">0</h1>
-            <img src="assets/Eschkere.png" alt="pocxalko" id="image" style="transform: scale(70%) translateY(-15%);">
-            <p id="energy">500/500</p>
-            <progress min="0" max="500" value="500" id="pro"></progress>
-            <div>
-                <a href="shop.html"></a>
-            </div>
+    <body">
+    <div id="game">
+        <form action="index.php"></form>
+        <h1 id="h1">0</h1>
+        <img src="assets/Eschkere.png" alt="pocxalko" id="image" style="transform: scale(70%) translateY(-15%);">
+        <p id="energy">500/500</p>
+        <progress min="0" max="500" value="500" id="pro"></progress>
+        <div>
+            <a href="shop.html"></a>
         </div>
-        <div id="selectbar">
-            <a class="select" id="tap">🧇 тапать</p>
-            <a href="shop.html" class="select" id="shopin">🛒 магазин</a>
-            <a href="" class="select" id="donate">💵 донат</a>
+    </div>
+    <div id="mag" style="background-color: #4c4c4c; border-top-right-radius: 10px; border-top-left-radius: 10px; height: 500px; transform: translateY(-70px);">
+        <div class="select" id="tap" style="background-color: #3a3a3a; border-radius: 30px; height: 100px; transform: translateY(15px);">
+            <img src="assets/tap.png" alt="" width="75px" height="75px" style="margin-right: 80%; transform: translateY(20px)">
+            <p class="description" style="transform: translate(-15px, -50px); color: #FDF4E3;">Boost: +1 JC for tap</p>
+            <p class="amount" style="transform: translate(210px, -85px); color: #FDF4E3;">2000 JC</p>
         </div>
+        <div class="select" id="plysenergy" style="background-color: #3a3a3a; border-radius: 30px; height: 100px; transform: translateY(25px);">
+            <img src="assets/energy.png" alt="" width="75px" height="75px" style="margin-right: 80%; transform: translateY(20px)">
+            <p class="description" style="transform: translate(5px, -50px); color: #FDF4E3;">Boost: +500 energy limit</p>
+            <p class="amount" style="transform: translate(210px, -85px); color: #FDF4E3;">2000 JC</p>
+        </div>
+    </div>
     </body>
     <script src="script.js"></script>
 </html>
