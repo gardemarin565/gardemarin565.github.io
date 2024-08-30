@@ -9,7 +9,7 @@
     <div id="game">
         <form action="index.php"></form>
         <h1 id="h1">0</h1>
-        <img src="assets/Eschkere.png" alt="pocxalko" id="image" style="transform: scale(70%) translateY(-15%);">
+        <img src="assets/Eschkere.png" alt="pocxalko" id="image" style="transform: scale(70%) translateY(-15%);" onclick="plusCoin()">
         <p id="energy">500/500</p>
         <progress min="0" max="500" value="500" id="pro"></progress>
         <div>
@@ -44,7 +44,7 @@
         let params = new URLSearchParams(document.location.search)
         let value = params.get('id')
         
-        buttonId.addEventListener('click', function(){
+        function pluscoin(){
             counter=counter+upgrade
             h1Id.textContent = counter
             progress=progress-upgrade
