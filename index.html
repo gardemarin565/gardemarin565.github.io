@@ -2,33 +2,115 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
         <title>Ok</title>
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="styl.css">
+        <style>
+            .hide{
+                display: none;
+            }
+            ::selection{
+                background: #dd000000;
+                color: #fdf4e3;
+            }
+            body {
+                background: radial-gradient(#111111, #919191);
+            }
+            buy {
+                background-color: #3a3a3a;
+                border-radius: 30px;
+                height: 100px;
+                transform: translateY(25px);
+                margin-left: 10px;
+                margin-top: 10px;
+                width: auto;
+            }
+            sold {
+                background-color: #ff0000;
+                border-radius: 30px;
+                height: 100px;
+                transform: translateY(25px);
+                margin-left: 10px;
+                margin-top: 10px;
+                width: auto;
+            }
+            .amount {
+                transform: translate(210px, -85px);
+                color: #FDF4E3;
+            }
+            .description {
+                transform: translate(5px, -50px);
+                color: #FDF4E3;
+            }
+            #amountautotap {
+                transform: translate(210px, -85px);
+            }
+            #descriptionautotap {
+                transform: translate(5px, -50px);
+            }
+            .sold {
+                color: #848482;
+            }
+            .notbuying {
+                color: #fdf4e3;
+            }
+            #confrim {
+                left: 50%;
+                transform: translate(-50%, -500px);
+                background-color: #3e3e3e;
+                border-radius: 15px;
+                width: 280px;
+            }
+            #fr {
+                transform: translateY(-700%);
+                margin-left: 80%;
+            }
+        </style>
     </head>
-    <body">
-    <div id="game">
-        <form action="index.php"></form>
-        <h1 id="h1">0</h1>
-        <img src="assets/Eschkere.png" alt="pocxalko" id="image" style="transform: scale(70%) translateY(-15%);" onclick="plusCoin()">
-        <p id="energy">500/500</p>
+    <body>
+        <div id="ref" class="hide" style="width: 90%;">
+            <img src="assets/back.png" alt="" onclick="igrat()" style="transform: translateX(-750%);">
+            <div style="background-color: #3a3a3a; border-radius: 30px; height: 100px; transform: translateY(25px); margin-left: 100px;" onclick="copy()">
+                <h3 style="color: #757f85;">Your referal link:</h3>
+                <p id="link" style="color: #FDF4E3;"></p>
+                <p style="color: #b0aea9;">Click to link, for copy</p>
+            </div>
+        </div>
+    <div class="" id="game">
+        <h1 id="h1" style="color: #fdf4e3">0</h1>
+        <img src="assets/Eschkere.png" alt="pocxalko" id="image" style="transform: scale(70%) translateY(-15%);" onclick="text()">
+        <p id="energy" style="color: #fdf4e3">500/500</p>
         <progress min="0" max="500" value="500" id="pro"></progress>
-        <div>
-            <a href="shop.html"></a>
-        </div>
-    </div>
-    <div id="mag" style="background-color: #4c4c4c; border-top-right-radius: 10px; border-top-left-radius: 10px; height: 500px; transform: translateY(260px);">
-        <div class="select" id="tap" style="background-color: #3a3a3a; border-radius: 30px; height: 100px; transform: translateY(15px);">
-            <img src="assets/tap.png" alt="" width="75px" height="75px" style="margin-right: 80%; transform: translateY(20px)">
-            <p class="description" style="transform: translate(-15px, -50px); color: #FDF4E3;">Boost: +1 JC for tap</p>
-            <p class="amount" style="transform: translate(210px, -85px); color: #FDF4E3;">2000 JC</p>
-        </div>
-        <div class="select" id="plysenergy" style="background-color: #3a3a3a; border-radius: 30px; height: 100px; transform: translateY(25px);">
-            <img src="assets/energy.png" alt="" width="75px" height="75px" style="margin-right: 80%; transform: translateY(20px)">
-            <p class="description" style="transform: translate(5px, -50px); color: #FDF4E3;">Boost: +500 energy limit</p>
-            <p class="amount" style="transform: translate(210px, -85px); color: #FDF4E3;">2000 JC</p>
+        <div id="mag" style="background-color: #4c4c4c; border-top-right-radius: 10px; border-top-left-radius: 10px; height: 500px; transform: translateY(-70px);">
+            <div class="select" id="tap" style="background-color: #3a3a3a; border-radius: 30px; height: 100px; transform: translateY(15px)" onclick="con(1)">
+                <img src="assets/tap.png" alt="" width="75px" height="75px" style="margin-right: 80%; transform: translateY(20px)">
+                <p class="description" style="transform: translate(-15px, -50px); color: #FDF4E3;">Boost: +1 JC for tap</p>
+                <p class="amount" style="transform: translate(210px, -85px); color: #FDF4E3;" id="tapprice">2000 JC</p>
+            </div>
+            <div class="select" id="plys" style="background-color: #3a3a3a; border-radius: 30px; height: 100px; transform: translateY(25px); margin-left: 10px" onclick="con(2)">
+                <img src="assets/energy.png" alt="" width="75px" height="75px" style="margin-right: 80%; transform: translateY(20px)">
+                <p class="description" style="transform: translate(5px, -50px); color: #FDF4E3;">Boost: +500 energy limit</p>
+                <p class="amount" style="transform: translate(210px, -85px); color: #FDF4E3;" id="energyprice">2000 JC</p>
+            </div>
+            <div class="buy" id="autotap" style="background-color: #3a3a3a; border-radius: 30px; height: 100px; transform: translateY(25px); margin-left: 10px; margin-top: 10px; width: auto;" onclick="con(3)">
+                <img src="assets/energy.png" alt="" id="imgenergy" width="75px" height="75px" style="margin-right: 80%; transform: translateY(20px)">
+                <p class="notbuying" id="descriptionautotap">Boost: Autotap</p>
+                <p class="notbuying" id="amountautotap">25000 JC</p>
+            </div>
+            <div class="hide" id="confrim">
+                <h3 id="textofconfrim" class="none">Do you really want to by</h3>
+                <div style="background-color: #45ff83; border-radius: 5px; width: 250px; transform: translate(15px, -5px); height: 20px;" onclick="yes()" id="yes">
+                    <p>Yes</p>
+                </div>
+                <div style="background-color: #afb7b2; border-radius: 5px; transform: translate(15px, -5px); width: 250px; height: 20px;" onclick="no()" id="no">
+                    <p>No</p>
+                </div>
+            </div>
+            <img src="assets/friends.png" alt="" onclick="friend()" id="fr">
         </div>
     </div>
     </body>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
         var h1Id=document.getElementById('h1')
         var buttonId=document.getElementById('image')
@@ -43,8 +125,108 @@
         var h1IdShop = document.getElementById('clicker')
         let params = new URLSearchParams(document.location.search)
         let value = params.get('id')
+        let referal =params.get('ref')
+        var autotap = false
+        var div = document.getElementById('confrim')
+        var confr = document.getElementById('textofconfrim')
+        var typeofconfr = ""
+        var pricetap = 2000
+        var priceenergy = 2000
+        var buy = document.getElementById('autotap')
+        var tapprice = document.getElementById('tapprice')
+        var energyprice = document.getElementById('energyprice')
+        var buystatusdescription = document.getElementById('descriptionautotap')
+        var buystatusamount = document.getElementById('amountautotap')
+        var imgenergy = document.getElementById('imgenergy')
+        var reflink = `https://t.me/pacxalka_bot/?text=/start%20${value}`
+        const link = document.getElementById('link')
+        const game = document.getElementById('game')
+        const ref = document.getElementById('ref')
+
+        function copy() {
+            navigator.clipboard.writeText(reflink)
+        }
+
+        function igrat(){
+            game.className=''
+            ref.className='hide'
+        }
+
+        function friend(){
+            game.className='hide'
+            ref.className=''
+            link.textContent=reflink
+        }
+
+        function no(){
+            div.className='hide'
+        }
         
-        function pluscoin(){
+        function yes(){
+            if(typeofconfr=="tap"){
+                tapUpgrade()
+                div.className='hide'
+            }
+            else if(typeofconfr=="energy"){
+                energyUpgrade()
+                div.className='hide'
+            }
+            else{
+                Autotap()
+                div.className='hide'
+            }
+        }
+
+        function con(confri){
+            typeofconfr=confri
+            if(confri==1){
+                confr.textContent="What do you really want to by 1JC for a tap?"
+                div.className='ok'
+                typeofconfr="tap"
+            }
+            else if(confri==2){
+                confr.textContent="What do you really want to by +500 energy limit?"
+                div.className='ok'
+                typeofconfr="energy"
+            }
+            else{
+                confr.textContent="What do you really want to by Autotap?"
+                div.className='ok'
+                typeofconfr="autotap"
+            }
+            
+        }
+
+        function Autotap(){
+            if(counter>=25000){
+                alert('ok')
+            }
+            else{
+                alert('Покупать нельзя')
+            }
+        }
+
+        function tapUpgrade(){
+            if(counter - pricetap>=0) {
+                upgrade=upgrade + 1
+            }
+            else{
+                alert("Покупать нельзя")
+            }
+        }
+
+        function energyUpgrade(){
+            if(counter - priceenergy>=0) {
+                EnergyLimit = EnergyLimit+500
+            }
+            else{
+                alert("Покупать нельзя")
+            }
+        }
+        
+        buttonId.addEventListener('click', function(){
+            buttonId.className="clicked"
+            setInterval(() => buttonId.className="notcklicked", 200);
             counter=counter+upgrade
             h1Id.textContent = counter
             progress=progress-upgrade
@@ -59,7 +241,8 @@
             if (progress<EnergyLimitUpgrade) {
                 progress=progress+1
                 progressBar.setAttribute('value', progress)
-                energu.textContent=`${progress}/500`
+                energu.textContent=`${progress}/${EnergyLimitUpgrade}`
+                
             }
             else {}
         }
