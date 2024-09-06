@@ -1,0 +1,109 @@
+body {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: radial-gradient(#444444, #919191);
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+body {
+    background-color: white;
+}
+
+#image {
+    margin-bottom: 10%;
+    transition: transform 0.5s;
+    transition-timing-function: linear;
+}
+
+.scroll {
+    height: 6px;
+    background-color: wheat;
+    position: fixed;
+    top: 0;
+}
+
+.clicked {
+    scale: 90%;
+}
+
+.clickin {
+    transform: scale(-50%);
+}
+
+.notclicked {
+    transform: scale(100%);
+}
+
+progress {
+    width: 200px;
+    transform: translate(-47%, -850%);
+    position: absolute;
+}
+
+#energy {
+    transform: translateY(-690%);
+}
+
+#mag {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #4c4c4c;
+}
+
+#confrim {
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    height: 150px;
+    width: 200px;
+    transform: translateY(500%);
+    background-color: #3e3e3e;
+}
+
+#yes {
+    width: 80%;
+    height: 100px;
+    background-color: #45ff83;
+    border-radius: 5px;
+}
+
+#no {
+    width: 80%;
+    height: 100px;
+    background-color: #afb7b2;
+    border-radius: 5px;
+}
+
+.clicked{
+    transform: scale(60%);
+}
+
+.notclicked{
+    transform: scale(70%);
+}
+
+#img {
+    transform: translateY(-15%);
+    transition: transform 0.2s ease-in;
+}
+
+.buy {
+    transform: translateY(25%);
+    background-color: #3a3a3a;
+    border-radius: 30px;
+    width: auto;
+    margin-left: 10px;
+    margin-top: 10px;
+    height: 100px
+}
+
+.notbuy {
+    transform: translate(280px, -500%);
+    background-color: #642929;
+    border-radius: 15px;
+    width: 280px;
+}
