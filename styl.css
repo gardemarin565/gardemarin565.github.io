@@ -4,7 +4,7 @@ body {
     padding: 0;
     height: 110dvh;
     background: radial-gradient(#444444, #919191);
-    overflow-y: none;
+    overflow-y: hidden;
 }
 
 body {
