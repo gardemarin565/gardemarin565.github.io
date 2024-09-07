@@ -2,7 +2,7 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
-    height: 150vh;
+    height: 110vh;
     background: radial-gradient(#444444, #919191);
     overflow-y: none;
 }
