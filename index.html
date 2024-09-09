@@ -35,15 +35,17 @@
                 width: auto;
             }
             .amount {
-                transform: translate(210px, -85px);
                 color: #FDF4E3;
+                transform: translateY(-85px);
+                margin-left: 50%;
             }
             .description {
                 transform: translate(5px, -50px);
                 color: #FDF4E3;
             }
             #amountautotap {
-                transform: translate(210px, -85px);
+                transform: translateY(-85px);
+                margin-left: 50%;
             }
             #descriptionautotap {
                 transform: translate(5px, -50px);
@@ -88,19 +90,19 @@
             <div class="select" id="tap" style="background-color: #3a3a3a; border-radius: 30px; height: 100px; transform: translateY(15px)" onclick="con(1)">
                 <img src="assets/tap.png" alt="" width="75px" height="75px" style="margin-right: 80%; transform: translateY(20px)">
                 <p class="description" style="transform: translate(-15px, -50px); color: #FDF4E3;">Boost: +1 JC for tap</p>
-                <p class="amount" style="transform: translate(210px, -85px); color: #FDF4E3;" id="tapprice">2000 JC</p>
+                <p class="amount" id="tapprice">2000 JC</p>
             </div>
             <div class="select" id="plys" style="background-color: #3a3a3a; border-radius: 30px; height: 100px; transform: translateY(25px); margin-left: 10px" onclick="con(2)">
                 <img src="assets/energy.png" alt="" width="75px" height="75px" style="margin-right: 80%; transform: translateY(20px)">
                 <p class="description" style="transform: translate(5px, -50px); color: #FDF4E3;">Boost: +500 energy limit</p>
-                <p class="amount" style="transform: translate(210px, -85px); color: #FDF4E3;" id="energyprice">2000 JC</p>
+                <p class="amount" id="energyprice">2000 JC</p>
             </div>
             <div class="buy" id="autotap" style="background-color: #3a3a3a; border-radius: 30px; height: 100px; transform: translateY(25px); margin-left: 10px; margin-top: 10px; width: auto;" onclick="con(3)">
                 <img src="assets/autotap.png" alt="" id="imgenergy" width="75px" height="75px" style="margin-right: 80%; transform: translateY(20px)">
                 <p class="notbuying" id="descriptionautotap">Boost: Autotap</p>
                 <p class="notbuying" id="amountautotap">25000 JC</p>
             </div>
-            <h1 style="color: #fdf4e3; margin-top: 4%;">More content coming soon...</h1>
+            <h1 style="color: #fdf4e3; margin-top: 5%;">More content coming soon...</h1>
             <div class="hide" id="confrim">
                 <h3 id="textofconfrim" class="none">Do you really want to by</h3>
                 <div style="background-color: #45ff83; border-radius: 5px; width: 250px; transform: translate(15px, -5px); height: 20px;" onclick="yes()" id="yes">
