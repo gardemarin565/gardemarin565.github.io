@@ -236,7 +236,7 @@
             buttonId.className="clicked"
             setInterval(() => buttonId.className="notcklicked", 200);
             counter=counter+upgrade
-            h1Id.textContent = ref
+            h1Id.textContent = counter
             progress=progress-upgrade
             energu.textContent=`${progress}/${EnergyLimitUpgrade}`
             progressBar.setAttribute('value', progress)
