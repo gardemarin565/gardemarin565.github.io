@@ -110,3 +110,10 @@ progress {
     border-radius: 15px;
     width: 280px;
 }
+
+.select {
+    margin-left: 10px;
+    border-radius: 30px;
+    background-color: #3a3a3a;
+    height: 100px;
+}
